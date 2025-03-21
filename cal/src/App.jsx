@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 import { isMobile, isTablet, isDesktop } from 'react-device-detect';
-
+import './App.css'
 
 function App() {
   const [timeZone, setTimeZone] = useState("PST");
@@ -141,7 +140,7 @@ function App() {
                 <h1 className='text-xl'>Notes</h1>
                 <p className='underline text-sm'>If there is an asterisk, please text me to figure out if I am available. Click the PST button <br />
                 to see the time in EST and vice-versa. I will update this on a weekly basis or sooner if some- <br/>  
-                thing arises. I made this with React, Tailwind, and Heroku. I designed this in Figma.</p>
+                thing arises. I made this with React, Tailwind, and Vercel. I designed this in Figma.</p>
               </div>
             </div>
           </div>
@@ -267,7 +266,7 @@ function App() {
                   <p className="underline text-sm">
                     If there is an asterisk, please text me to figure out if I am available. Click the PST button <br />
                     to see the time in EST and vice-versa. I will update this on a weekly basis or sooner if something arises. <br />
-                    I made this with React, Tailwind, and Heroku. I designed this in Figma.
+                    I made this with React, Tailwind, and Vercel. I designed this in Figma.
                   </p>
                 </div>
               </div>
