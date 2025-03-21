@@ -5,12 +5,15 @@ import './App.css'
 function App() {
   const [timeZone, setTimeZone] = useState("PST");
   const [dates, setDates] = useState([]);
+  const [month, setMonth] = useState('');
 
   useEffect(() => {
     const today = new Date();
 
     const sunday = today.getDate() - today.getDay(); 
     const weeksDates = [];
+
+    setMonth(today.toLocaleString('default', { month: 'long' }));
 
     for (let i = 0; i < 7; i++) {
       const day = new Date(today.setDate(sunday + i));
@@ -26,7 +29,7 @@ function App() {
       <div className='flex h-screen w-screen bg-gradient-to-b from-cyan-200 to-sky-50 items-center justify-center'>
         <div className='flex flex-col justify-center bg-white h-180 w-360 rounded-3xl border-1 border-cyan-600'>
           <button className='ml-300 border-1 rounded-3xl px-3 py-1 h-fit w-fit' onClick={() => setTimeZone(timeZone === "PST" ? "EST" : "PST")}>{timeZone}</button>
-          <h1 id="header" className='ml-40 text-7xl'>Weekly Aryian <span id="month" className='text-lg'>March</span></h1>
+          <h1 id="header" className='ml-40 text-7xl'>Weekly Aryian <span id="month" className='text-lg'>{month}</span></h1>
           <div className='flex flex-col justify-center items-center'>
             <div className="grid grid-cols-7 gap-4 border-1 rounded-3xl p-3">
               <div className="border-1 p-3 rounded-3xl">
@@ -154,7 +157,7 @@ function App() {
               {timeZone}
             </button>
             <h1 id="header" className="text-center sm:text-7xl text-4xl">
-              Weekly Aryian <span id="month" className="text-lg">March</span>
+              Weekly Aryian <span id="month" className="text-lg">{month}</span>
             </h1>
             <div className="flex flex-col justify-center items-center mt-4 mx-4">
               <div className="grid grid-cols-1 sm:grid-cols-7 gap-4 sm:gap-6 w-full">
