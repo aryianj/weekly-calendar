@@ -1,10 +1,25 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { isMobile, isTablet, isDesktop } from 'react-device-detect';
 
 
 function App() {
   const [timeZone, setTimeZone] = useState("PST");
+  const [dates, setDates] = useState([]);
+
+  useEffect(() => {
+    const today = new Date();
+
+    const startOfWeek = today.getDate() - today.getDay(); 
+    const newDates = [];
+
+    for (let i = 0; i < 7; i++) {
+      const day = new Date(today.setDate(startOfWeek + i));
+      newDates.push(day.getDate());
+    }
+
+    setDates(newDates);
+  }, []);
 
   return (
     <>
@@ -17,7 +32,7 @@ function App() {
             <div className="grid grid-cols-7 gap-4 border-1 rounded-3xl p-3">
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>SUNDAY</h1>
-                <p className='text-sm pt-24'>16</p>
+                <p className='text-sm pt-24'>{dates[0]}</p>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>MONDAY</h1>
@@ -28,7 +43,7 @@ function App() {
                   </li>
                   <p className='text-sm'>{timeZone === "PST" ? "10AM-6PM" : "1PM-9PM"}</p>
                 </ul>
-                <p className='text-sm pt-13'>17</p>
+                <p className='text-sm pt-13'>{dates[1]}</p>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>TUESDAY</h1>
@@ -44,7 +59,7 @@ function App() {
                   </li>
                   <p className='text-sm'>{timeZone === "PST" ? "6PM-10PM" : "9PM-1AM"}</p>
                 </ul>
-                <p className='text-sm pt-2'>18</p>
+                <p className='text-sm pt-2'>{dates[2]}</p>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>WEDNESDAY</h1>
@@ -55,7 +70,7 @@ function App() {
                   </li>
                   <p className='text-sm'>{timeZone === "PST" ? "11AM-7PM" : "2PM-10PM"}</p>
                 </ul>
-                <p className='text-sm pt-13'>19</p>
+                <p className='text-sm pt-13'>{dates[3]}</p>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>THURSDAY</h1>
@@ -66,7 +81,7 @@ function App() {
                   </li>
                   <p className='text-sm'>{timeZone === "PST" ? "4:30PM-5:30PM" : "7:30PM-8:30PM"}</p>
                 </ul>
-                <p className='text-sm pt-13'>20</p>
+                <p className='text-sm pt-13'>{dates[4]}</p>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>FRIDAY</h1>
@@ -82,7 +97,7 @@ function App() {
                   </li>
                   <p className='text-sm'>{timeZone === "PST" ? "9:30AM-10AM" : "12:30PM-1PM"}</p>
                 </ul>
-                <p className='text-sm pt-2'>21</p>
+                <p className='text-sm pt-2'>{dates[5]}</p>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>SATURDAY</h1>
@@ -93,7 +108,7 @@ function App() {
                   </li>
                   <p className='text-sm'>{timeZone === "PST" ? "8AM-4PM" : "11AM-7PM"}</p>
                 </ul>
-                <p className='text-sm pt-13'>22</p>
+                <p className='text-sm pt-13'>{dates[6]}</p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4 border-1 rounded-3xl p-3 mt-6">
@@ -146,7 +161,7 @@ function App() {
               <div className="grid grid-cols-1 sm:grid-cols-7 gap-4 sm:gap-6 w-full">
                 <div className="border-1 p-3 rounded-3xl">
                   <h1 className="text-center text-xl">SUNDAY</h1>
-                  <p className='text-sm pt-18'>16</p>
+                  <p className='text-sm pt-18'>{dates[0]}</p>
                 </div>
                 <div className="border-1 p-3 rounded-3xl">
                   <h1 className='text-center text-xl'>MONDAY</h1>
@@ -157,7 +172,7 @@ function App() {
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "10AM-6PM" : "1PM-9PM"}</p>
                   </ul>
-                  <p className='text-sm pt-10'>17</p>
+                  <p className='text-sm pt-10'>{dates[1]}</p>
                 </div>
                 <div className="border-1 p-3 rounded-3xl">
                   <h1 className='text-center text-xl'>TUESDAY</h1>
@@ -173,7 +188,7 @@ function App() {
                   </li>
                   <p className='text-sm'>{timeZone === "PST" ? "6PM-10PM" : "9PM-1AM"}</p>
                 </ul>
-                <p className='text-sm pt-2'>18</p>
+                <p className='text-sm pt-2'>{dates[2]}</p>
                 </div>
                 <div className="border-1 p-3 rounded-3xl">
                   <h1 className='text-center text-xl'>WEDNESDAY</h1>
@@ -184,7 +199,7 @@ function App() {
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "11AM-7PM" : "2PM-10PM"}</p>
                   </ul>
-                  <p className='text-sm pt-8'>19</p>
+                  <p className='text-sm pt-8'>{dates[3]}</p>
                 </div>
                 <div className="border-1 p-3 rounded-3xl">
                   <h1 className='text-center text-xl'>THURSDAY</h1>
@@ -195,7 +210,7 @@ function App() {
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "4:30PM-5:30PM" : "7:30PM-8:30PM"}</p>
                   </ul>
-                  <p className='text-sm pt-8'>20</p>
+                  <p className='text-sm pt-8'>{dates[4]}</p>
                 </div>
                 <div className="border-1 p-3 rounded-3xl">
                   <h1 className='text-center text-xl'>FRIDAY</h1>
@@ -206,7 +221,7 @@ function App() {
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "9AM-9:30AM" : "12PM-12:30PM"}</p>
                   </ul>
-                  <p className='text-sm pt-8'>21</p>
+                  <p className='text-sm pt-8'>{dates[5]}</p>
                 </div>
                 <div className="border-1 p-3 rounded-3xl">
                   <h1 className='text-center text-xl'>SATURDAY</h1>
@@ -217,7 +232,7 @@ function App() {
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "8AM-4PM" : "11AM-7PM"}</p>
                   </ul>
-                  <p className='text-sm pt-8'>22</p>
+                  <p className='text-sm pt-8'>{datess}</p>
                 </div>
               </div>
 
