@@ -5,4 +5,4 @@ bunch of calendars you don't care about to yours? I don't!) There is probably a 
 
 
 ## Made with...
-React, Tailwind, Vite, Vercel, and love. <3
+React, Tailwind, Vite, Vercel, Figma, and love. <3
