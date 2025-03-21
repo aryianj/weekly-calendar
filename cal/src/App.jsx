@@ -10,15 +10,15 @@ function App() {
   useEffect(() => {
     const today = new Date();
 
-    const startOfWeek = today.getDate() - today.getDay(); 
-    const newDates = [];
+    const sunday = today.getDate() - today.getDay(); 
+    const weeksDates = [];
 
     for (let i = 0; i < 7; i++) {
-      const day = new Date(today.setDate(startOfWeek + i));
-      newDates.push(day.getDate());
+      const day = new Date(today.setDate(sunday + i));
+      weeksDates.push(day.getDate());
     }
 
-    setDates(newDates);
+    setDates(weeksDates);
   }, []);
 
   return (
