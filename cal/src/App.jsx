@@ -234,7 +234,7 @@ function App() {
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "8AM-4PM" : "11AM-7PM"}</p>
                   </ul>
-                  <p className='text-sm pt-8'>{datess}</p>
+                  <p className='text-sm pt-8'>{dates[6]}</p>
                 </div>
               </div>
 
