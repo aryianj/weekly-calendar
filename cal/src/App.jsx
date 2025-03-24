@@ -44,8 +44,13 @@ function App() {
                     Work
                   </li>
                   <p className='text-sm'>{timeZone === "PST" ? "10AM-6PM" : "1PM-9PM"}</p>
+                  <li className="flex items-center gap-2">
+                    <span className="w-3 h-3 border-1 border-black bg-green-700 rounded-full"></span>
+                    Eshaan Returns!
+                  </li>
+                  <p className='text-sm'>{timeZone === "PST" ? "5PM" : "8PM"}</p>
                 </ul>
-                <p className='text-sm pt-13'>{dates[1]}</p>
+                <p className='text-sm pt-3'>{dates[1]}</p>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>TUESDAY</h1>
@@ -90,14 +95,14 @@ function App() {
                 <ul className='list-disc pl-1'>
                   <li className="flex items-center gap-2">
                     <span className="w-3 h-3 border-1 border-black bg-green-100 rounded-full"></span>
-                    Class *
+                    Midterm *
                   </li>
-                  <p className='text-sm'>{timeZone === "PST" ? "9AM-9:30AM" : "12PM-12:30PM"}</p>
+                  <p className='text-sm'>{timeZone === "PST" ? "8AM-12:30PM" : "11AM-3:30PM"}</p>
                   <li className="flex items-center gap-2">
                     <span className="w-3 h-3 border-1 border-black bg-teal-600 rounded-full"></span>
                     Meeting *
                   </li>
-                  <p className='text-sm'>{timeZone === "PST" ? "9:30AM-10AM" : "12:30PM-1PM"}</p>
+                  <p className='text-sm'>Canceled (maybe){/*timeZone === "PST" ? "9:30AM-10AM" : "12:30PM-1PM"*/}</p>
                 </ul>
                 <p className='text-sm pt-2'>{dates[5]}</p>
               </div>
@@ -113,7 +118,14 @@ function App() {
                 <p className='text-sm pt-13'>{dates[6]}</p>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4 border-1 rounded-3xl p-3 mt-6">
+            <div className="grid grid-cols-3 gap-2 border-1 rounded-3xl p-3 mt-6">
+            <div className="border-1 p-3 rounded-3xl">
+                <h1 className='text-xl'>Help</h1>
+                <p className='underline text-sm'>
+                If there is an asterisk, please text me to figure out if I am available. Click the PST button
+                to see the time in EST and vice-versa. I will update this on a weekly basis or sooner if some-
+                thing arises. I made this with React, Tailwind, and Vercel. I designed this in Figma.</p>
+              </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-xl'>Color Clarifications</h1>
                   <ul className='list-disc pl-1'>
@@ -134,23 +146,24 @@ function App() {
                       Meeting with Project Partners
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-3 h-3 border-1 border-black bg-gray-500 rounded-full"></span>
+                      <span className="min-w-3 min-h-3 border-1 border-black bg-gray-500 rounded-full"></span>
                       If there is an asterisk, that means that the time may run longer or shorter. 
                     </li>
                   </ul>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-xl'>Notes</h1>
-                <p className='underline text-sm'>If there is an asterisk, please text me to figure out if I am available. Click the PST button <br />
-                to see the time in EST and vice-versa. I will update this on a weekly basis or sooner if some- <br/>  
-                thing arises. I made this with React, Tailwind, and Vercel. I designed this in Figma.</p>
+                <p className='underline text-sm'>Eshaan's returning from India!!! Also, Eshaan and I are seeing BTS j-Hope on March 31st! I'm so excited! I will update Friday's
+                meeting if we are still having it. But it seems unlikely considering we are having our midterm that day. The following 2 weeks, the schedule will have an unusual change. I am switching shifts  
+                with Berry. So I will be working on the following Sunday instead of next Monday.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
       )}
-      {(isMobile) && (
+      {(isMobile) && ( 
         <div className="flex sm:h-screen sm:w-max items-center justify-center mt-10">
           <div className="flex flex-col justify-center bg-white max-w-full sm:max-w-[360px] w-full sm:h-[500px] h-full rounded-3xl border-1p-4">
             <button className="self-center sm:ml-32 ml-0 border-1 rounded-3xl px-3 py-1 mb-4 h-fit w-fit" onClick={() => setTimeZone(timeZone === "PST" ? "EST" : "PST")}>
@@ -173,8 +186,13 @@ function App() {
                       Work
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "10AM-6PM" : "1PM-9PM"}</p>
+                    <li className="flex items-center gap-2">
+                    <span className="w-3 h-3 border-1 border-black bg-green-700 rounded-full"></span>
+                    Eshaan Returns!
+                  </li>
+                  <p className='text-sm'>{timeZone === "PST" ? "5PM" : "8PM"}</p>
                   </ul>
-                  <p className='text-sm pt-10'>{dates[1]}</p>
+                  <p className='text-sm pt-1'>{dates[1]}</p>
                 </div>
                 <div className="border-1 p-3 rounded-3xl">
                   <h1 className='text-center text-xl'>TUESDAY</h1>
@@ -201,7 +219,7 @@ function App() {
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "11AM-7PM" : "2PM-10PM"}</p>
                   </ul>
-                  <p className='text-sm pt-8'>{dates[3]}</p>
+                  <p className='text-sm pt-10'>{dates[3]}</p>
                 </div>
                 <div className="border-1 p-3 rounded-3xl">
                   <h1 className='text-center text-xl'>THURSDAY</h1>
@@ -212,7 +230,7 @@ function App() {
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "4:30PM-5:30PM" : "7:30PM-8:30PM"}</p>
                   </ul>
-                  <p className='text-sm pt-8'>{dates[4]}</p>
+                  <p className='text-sm pt-10'>{dates[4]}</p>
                 </div>
                 <div className="border-1 p-3 rounded-3xl">
                   <h1 className='text-center text-xl'>FRIDAY</h1>
@@ -222,8 +240,13 @@ function App() {
                       Class *
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "9AM-9:30AM" : "12PM-12:30PM"}</p>
+                    <li className="flex items-center gap-2">
+                    <span className="w-3 h-3 border-1 border-black bg-teal-600 rounded-full"></span>
+                    Meeting *
+                  </li>
+                  <p className='text-sm'>Canceled (maybe){/*timeZone === "PST" ? "9:30AM-10AM" : "12:30PM-1PM"*/}</p>
                   </ul>
-                  <p className='text-sm pt-8'>{dates[5]}</p>
+                  <p className='text-sm pt-1'>{dates[5]}</p>
                 </div>
                 <div className="border-1 p-3 rounded-3xl">
                   <h1 className='text-center text-xl'>SATURDAY</h1>
@@ -234,11 +257,18 @@ function App() {
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "8AM-4PM" : "11AM-7PM"}</p>
                   </ul>
-                  <p className='text-sm pt-8'>{dates[6]}</p>
+                  <p className='text-sm pt-10'>{dates[6]}</p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-1 rounded-3xl p-3 mt-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-1 rounded-3xl p-3 mt-6">
+              <div className="border-1 p-3 rounded-3xl">
+                  <h1 className="text-xl">Notes</h1>
+                  <p className="underline text-sm">Eshaan's returning from India!!! Also, Eshaan and I are seeing BTS j-Hope on March 31st! I'm so excited! I will update Friday's
+                meeting if we are still having it. But it seems unlikely considering we are having our midterm that day. The following 2 weeks, the schedule will have an unusual change. I am switching shifts  
+                with Berry. So I will be working on the following Sunday instead of next Monday.
+                  </p>
+                </div>
                 <div className="border-1 p-3 rounded-3xl">
                   <h1 className="text-xl">Color Clarifications</h1>
                   <ul className="list-disc pl-1">
@@ -259,16 +289,16 @@ function App() {
                       Meeting with Project Partners
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-3 h-3 border-1 border-black bg-gray-500 rounded-full"></span>
+                      <span className="min-w-3 min-h-3 border-1 border-black bg-gray-500 rounded-full"></span>
                       If there is an asterisk, that means that the time may run longer or shorter.
                     </li>
                   </ul>
                 </div>
                 <div className="border-1 p-3 rounded-3xl">
-                  <h1 className="text-xl">Notes</h1>
+                  <h1 className="text-xl">Help</h1>
                   <p className="underline text-sm">
-                    If there is an asterisk, please text me to figure out if I am available. Click the PST button <br />
-                    to see the time in EST and vice-versa. I will update this on a weekly basis or sooner if something arises. <br />
+                    If there is an asterisk, please text me to figure out if I am available. Click the PST button
+                    to see the time in EST and vice-versa. I will update this on a weekly basis or sooner if something arises. 
                     I made this with React, Tailwind, and Vercel. I designed this in Figma.
                   </p>
                 </div>
