@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      {(isDesktop || isTablet) && (
+      {/*(isDesktop || isTablet)*/ isMobile && (
       <div className='flex h-screen w-screen bg-gradient-to-b from-cyan-200 to-sky-50 items-center justify-center'>
         <div className='flex flex-col justify-center bg-white h-180 w-360 rounded-3xl border-1 border-cyan-600'>
           <button className='ml-300 border-1 rounded-3xl px-3 py-1 h-fit w-fit' onClick={() => setTimeZone(timeZone === "PST" ? "EST" : "PST")}>{timeZone}</button>
@@ -34,7 +34,7 @@ function App() {
             <div className="grid grid-cols-7 gap-4 border-1 rounded-3xl p-3">
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>SUNDAY</h1>
-                <p className='text-sm pt-24'>{dates[0]}</p>
+                <p className='text-sm pt-35'>{dates[0]}</p>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>MONDAY</h1>
@@ -50,7 +50,7 @@ function App() {
                   </li>
                   <p className='text-sm'>{timeZone === "PST" ? "5PM" : "8PM"}</p>
                 </ul>
-                <p className='text-sm pt-3'>{dates[1]}</p>
+                <p className='text-sm pt-13'>{dates[1]}</p>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>TUESDAY</h1>
@@ -66,7 +66,7 @@ function App() {
                   </li>
                   <p className='text-sm'>{timeZone === "PST" ? "6PM-10PM" : "9PM-1AM"}</p>
                 </ul>
-                <p className='text-sm pt-2'>{dates[2]}</p>
+                <p className='text-sm pt-13'>{dates[2]}</p>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>WEDNESDAY</h1>
@@ -76,6 +76,11 @@ function App() {
                     Work
                   </li>
                   <p className='text-sm'>{timeZone === "PST" ? "11AM-7PM" : "2PM-10PM"}</p>
+                  <li className="flex items-center gap-2">
+                    <span className="w-3 h-3 border-1 border-black bg-violet-200 rounded-full"></span>
+                    Ticket Presale
+                  </li>
+                  <p className='text-sm'>{timeZone === "PST" ? "11AM" : "2PM"}</p>
                 </ul>
                 <p className='text-sm pt-13'>{dates[3]}</p>
               </div>
@@ -88,7 +93,7 @@ function App() {
                   </li>
                   <p className='text-sm'>{timeZone === "PST" ? "4:30PM-5:30PM" : "7:30PM-8:30PM"}</p>
                 </ul>
-                <p className='text-sm pt-13'>{dates[4]}</p>
+                <p className='text-sm pt-24'>{dates[4]}</p>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>FRIDAY</h1>
@@ -104,7 +109,7 @@ function App() {
                   </li>
                   <p className='text-sm'>Canceled (maybe){/*timeZone === "PST" ? "9:30AM-10AM" : "12:30PM-1PM"*/}</p>
                 </ul>
-                <p className='text-sm pt-2'>{dates[5]}</p>
+                <p className='text-sm pt-13'>{dates[5]}</p>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>SATURDAY</h1>
@@ -115,7 +120,7 @@ function App() {
                   </li>
                   <p className='text-sm'>{timeZone === "PST" ? "8AM-4PM" : "11AM-7PM"}</p>
                 </ul>
-                <p className='text-sm pt-13'>{dates[6]}</p>
+                <p className='text-sm pt-24'>{dates[6]}</p>
               </div>
             </div>
             <div className="grid grid-cols-3 gap-2 border-1 rounded-3xl p-3 mt-6">
@@ -146,8 +151,8 @@ function App() {
                       Meeting with Project Partners
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="min-w-3 min-h-3 border-1 border-black bg-gray-500 rounded-full"></span>
-                      If there is an asterisk, that means that the time may run longer or shorter. 
+                      <span className="min-w-3 min-h-3 border-1 border-black  bg-violet-200 rounded-full"></span>
+                      Fun Life Events
                     </li>
                   </ul>
               </div>
@@ -163,7 +168,7 @@ function App() {
         </div>
       </div>
       )}
-      {(isMobile) && ( 
+      {/*(isMobile)*/ isDesktop && ( 
         <div className="flex sm:h-screen sm:w-max items-center justify-center mt-10">
           <div className="flex flex-col justify-center bg-white max-w-full sm:max-w-[360px] w-full sm:h-[500px] h-full rounded-3xl border-1p-4">
             <button className="self-center sm:ml-32 ml-0 border-1 rounded-3xl px-3 py-1 mb-4 h-fit w-fit" onClick={() => setTimeZone(timeZone === "PST" ? "EST" : "PST")}>
@@ -218,8 +223,13 @@ function App() {
                       Work
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "11AM-7PM" : "2PM-10PM"}</p>
+                    <li className="flex items-center gap-2">
+                      <span className="w-3 h-3 border-1 border-black bg-violet-200 rounded-full"></span>
+                      Ticket Presale
+                    </li>
+                    <p className='text-sm'>{timeZone === "PST" ? "11AM" : "2PM"}</p>
                   </ul>
-                  <p className='text-sm pt-10'>{dates[3]}</p>
+                  <p className='text-sm pt-2'>{dates[3]}</p>
                 </div>
                 <div className="border-1 p-3 rounded-3xl">
                   <h1 className='text-center text-xl'>THURSDAY</h1>
@@ -289,8 +299,8 @@ function App() {
                       Meeting with Project Partners
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="min-w-3 min-h-3 border-1 border-black bg-gray-500 rounded-full"></span>
-                      If there is an asterisk, that means that the time may run longer or shorter.
+                      <span className="min-w-3 min-h-3 border-1 border-black bg-violet-200 rounded-full"></span>
+                      Fun Life Events
                     </li>
                   </ul>
                 </div>
