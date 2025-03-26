@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      {/*(isDesktop || isTablet)*/ isMobile && (
+      {(isDesktop || isTablet) && (
       <div className='flex h-screen w-screen bg-gradient-to-b from-cyan-200 to-sky-50 items-center justify-center'>
         <div className='flex flex-col justify-center bg-white h-180 w-360 rounded-3xl border-1 border-cyan-600'>
           <button className='ml-300 border-1 rounded-3xl px-3 py-1 h-fit w-fit' onClick={() => setTimeZone(timeZone === "PST" ? "EST" : "PST")}>{timeZone}</button>
@@ -168,7 +168,7 @@ function App() {
         </div>
       </div>
       )}
-      {/*(isMobile)*/ isDesktop && ( 
+      {(isMobile) && ( 
         <div className="flex sm:h-screen sm:w-max items-center justify-center mt-10">
           <div className="flex flex-col justify-center bg-white max-w-full sm:max-w-[360px] w-full sm:h-[500px] h-full rounded-3xl border-1p-4">
             <button className="self-center sm:ml-32 ml-0 border-1 rounded-3xl px-3 py-1 mb-4 h-fit w-fit" onClick={() => setTimeZone(timeZone === "PST" ? "EST" : "PST")}>
