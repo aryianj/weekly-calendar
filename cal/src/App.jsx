@@ -16,16 +16,16 @@ function App() {
     setMonth(today.toLocaleString('default', { month: 'long' }));
 
     for (let i = 0; i < 7; i++) {
-      const day = new Date(today.setDate(sunday + i));
+      const day = new Date(today);
+      day.setDate(sunday + i);
       weeksDates.push(day.getDate());
     }
-
     setDates(weeksDates);
   }, []);
 
   return (
     <>
-      {(isDesktop || isTablet) && (
+      {(/*isDesktop || isTablet*/ isMobile) && (
       <div className='flex h-screen w-screen bg-gradient-to-b from-cyan-200 to-sky-50 items-center justify-center'>
         <div className='flex flex-col justify-center bg-white h-180 w-360 rounded-3xl border-1 border-cyan-600'>
           <button className='ml-300 border-1 rounded-3xl px-3 py-1 h-fit w-fit' onClick={() => setTimeZone(timeZone === "PST" ? "EST" : "PST")}>{timeZone}</button>
@@ -38,89 +38,102 @@ function App() {
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>MONDAY</h1>
-                <ul className='list-disc pl-1'>
-                  <li className="flex items-center gap-2">
-                    <span className="w-3 h-3 border-1 border-black bg-red-400 rounded-full"></span>
-                    Work
-                  </li>
-                  <p className='text-sm'>{timeZone === "PST" ? "10AM-6PM" : "1PM-9PM"}</p>
-                  <li className="flex items-center gap-2">
-                    <span className="w-3 h-3 border-1 border-black bg-green-700 rounded-full"></span>
-                    Eshaan Returns!
-                  </li>
-                  <p className='text-sm'>{timeZone === "PST" ? "5PM" : "8PM"}</p>
-                </ul>
-                <p className='text-sm pt-13'>{dates[1]}</p>
+                <div className="flex flex-col h-40 justify-between">
+                  <ul className='list-disc pl-1'>
+                    {/*<li className="flex items-center gap-2">
+                      <span className="w-3 h-3 border-1 border-black bg-red-400 rounded-full"></span>
+                      Work
+                    </li>
+                    <p className='text-sm'>{timeZone === "PST" ? "10AM-6PM" : "1PM-9PM"}</p>
+                    */}
+                    <li className="flex items-center gap-2">
+                      <span className="w-3 h-3 border-1 border-black bg-green-700 rounded-full"></span>
+                      Hanging Out
+                    </li>
+                    <p className='text-sm'>{timeZone === "PST" ? "1PM" : "4PM"}</p>
+                    <li className="flex items-center gap-2">
+                      <span className="w-3 h-3 border-1 border-black bg-violet-200 rounded-full"></span>
+                      j-hope Concert
+                    </li>
+                    <p className='text-sm'>{timeZone === "PST" ? "8PM" : "11PM"}</p>
+                  </ul>
+                  <p className='text-sm'>{dates[1]}</p>
+                </div>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>TUESDAY</h1>
-                <ul className='list-disc pl-1'>
-                  <li className="flex items-center gap-2">
-                    <span className="w-3 h-3 border-1 border-black bg-cyan-700 rounded-full"></span>
-                    Meetings *
-                  </li>
-                  <p className='text-sm'>{timeZone === "PST" ? "4:30PM-5:30PM" : "7:30PM-8:30PM"}</p>
-                  <li className="flex items-center gap-2">
-                    <span className="w-3 h-3 border-1 border-black bg-sky-200 rounded-full"></span>
-                    Class *
-                  </li>
-                  <p className='text-sm'>{timeZone === "PST" ? "6PM-10PM" : "9PM-1AM"}</p>
-                </ul>
-                <p className='text-sm pt-13'>{dates[2]}</p>
+                <div className="flex flex-col h-40 justify-between">
+                  <ul className='list-disc pl-1'>
+                    <li className="flex items-center gap-2">
+                      <span className="w-3 h-3 border-1 border-black bg-cyan-700 rounded-full"></span>
+                      Meetings *
+                    </li>
+                    <p className='text-sm'>{timeZone === "PST" ? "4:30PM-5:30PM" : "7:30PM-8:30PM"}</p>
+                    <li className="flex items-center gap-2">
+                      <span className="w-3 h-3 border-1 border-black bg-sky-200 rounded-full"></span>
+                      Class *
+                    </li>
+                    <p className='text-sm'>{timeZone === "PST" ? "6PM-10PM" : "9PM-1AM"}</p>
+                  </ul>
+                  <p className='text-sm'>{dates[2]}</p>
+                </div>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>WEDNESDAY</h1>
-                <ul className='list-disc pl-1'>
-                  <li className="flex items-center gap-2">
-                    <span className="w-3 h-3 border-1 border-black bg-red-400 rounded-full"></span>
-                    Work
-                  </li>
-                  <p className='text-sm'>{timeZone === "PST" ? "11AM-7PM" : "2PM-10PM"}</p>
-                  <li className="flex items-center gap-2">
-                    <span className="w-3 h-3 border-1 border-black bg-violet-200 rounded-full"></span>
-                    Ticket Presale
-                  </li>
-                  <p className='text-sm'>{timeZone === "PST" ? "11AM" : "2PM"}</p>
-                </ul>
-                <p className='text-sm pt-13'>{dates[3]}</p>
+                <div className="flex flex-col h-40 justify-between">
+                  <ul className='list-disc pl-1'>
+                    <li className="flex items-center gap-2">
+                      <span className="w-3 h-3 border-1 border-black bg-red-400 rounded-full"></span>
+                      Work
+                    </li>
+                    <p className='text-sm'>{timeZone === "PST" ? "11AM-7PM" : "2PM-10PM"}</p>
+                  </ul>
+                  <p className='text-sm'>{dates[3]}</p>
+                </div>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>THURSDAY</h1>
-                <ul className='list-disc pl-1'>
-                  <li className="flex items-center gap-2">
-                    <span className="w-3 h-3 border-1 border-black bg-cyan-700 rounded-full"></span>
-                    Meetings *
-                  </li>
-                  <p className='text-sm'>{timeZone === "PST" ? "4:30PM-5:30PM" : "7:30PM-8:30PM"}</p>
-                </ul>
-                <p className='text-sm pt-24'>{dates[4]}</p>
+                <div className="flex flex-col h-40 justify-between">
+                  <ul className='list-disc pl-1'>
+                    <li className="flex items-center gap-2">
+                      <span className="w-3 h-3 border-1 border-black bg-cyan-700 rounded-full"></span>
+                      Meetings *
+                    </li>
+                    <p className='text-sm'>{timeZone === "PST" ? "4:30PM-5:30PM" : "7:30PM-8:30PM"}</p>
+                  </ul>
+                  <p className='text-sm pt-24'>{dates[4]}</p>
+                </div>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>FRIDAY</h1>
-                <ul className='list-disc pl-1'>
-                  <li className="flex items-center gap-2">
-                    <span className="w-3 h-3 border-1 border-black bg-green-100 rounded-full"></span>
-                    Midterm *
-                  </li>
-                  <p className='text-sm'>{timeZone === "PST" ? "8AM-12:30PM" : "11AM-3:30PM"}</p>
-                  <li className="flex items-center gap-2">
-                    <span className="w-3 h-3 border-1 border-black bg-teal-600 rounded-full"></span>
-                    Meeting *
-                  </li>
-                  <p className='text-sm'>Canceled (maybe){/*timeZone === "PST" ? "9:30AM-10AM" : "12:30PM-1PM"*/}</p>
-                </ul>
-                <p className='text-sm pt-13'>{dates[5]}</p>
+                <div className="flex flex-col h-40 justify-between">
+                  <ul className='list-disc pl-1'>
+                    <li className="flex items-center gap-2">
+                      <span className="w-3 h-3 border-1 border-black bg-green-100 rounded-full"></span>
+                      Midterm *
+                    </li>
+                    <p className='text-sm'>{timeZone === "PST" ? "8AM-12:30PM" : "11AM-3:30PM"}</p>
+                    <li className="flex items-center gap-2">
+                      <span className="w-3 h-3 border-1 border-black bg-teal-600 rounded-full"></span>
+                      Meeting *
+                    </li>
+                    <p className='text-sm'>{timeZone === "PST" ? "9:30AM-10AM" : "12:30PM-1PM"}</p>
+                  </ul>
+                <p className='text-sm'>{dates[5]}</p>
+                </div>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>SATURDAY</h1>
-                <ul className='list-disc pl-1'>
-                  <li className="flex items-center gap-2">
-                    <span className="w-3 h-3 border-1 border-black bg-red-400 rounded-full"></span>
-                    Work
-                  </li>
-                  <p className='text-sm'>{timeZone === "PST" ? "8AM-4PM" : "11AM-7PM"}</p>
-                </ul>
-                <p className='text-sm pt-24'>{dates[6]}</p>
+                <div className="flex flex-col h-40 justify-between">
+                  <ul className='list-disc pl-1'>
+                    <li className="flex items-center gap-2">
+                      <span className="w-3 h-3 border-1 border-black bg-red-400 rounded-full"></span>
+                      Work
+                    </li>
+                    <p className='text-sm'>{timeZone === "PST" ? "8AM-4PM" : "11AM-7PM"}</p>
+                  </ul>
+                  <p className='text-sm pt-24'>{dates[6]}</p>
+                </div>
               </div>
             </div>
             <div className="grid grid-cols-3 gap-2 border-1 rounded-3xl p-3 mt-6">
@@ -154,13 +167,19 @@ function App() {
                       <span className="min-w-3 min-h-3 border-1 border-black  bg-violet-200 rounded-full"></span>
                       Fun Life Events
                     </li>
+                    <li className="flex items-center gap-2">
+                      <span className="min-w-3 min-h-3 border-1 border-black bg-green-700 rounded-full"></span>
+                      Eshaan Related
+                    </li>
                   </ul>
               </div>
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-xl'>Notes</h1>
-                <p className='underline text-sm'>Eshaan's returning from India!!! Also, Eshaan and I are seeing BTS j-Hope on March 31st! I'm so excited! I will update Friday's
-                meeting if we are still having it. But it seems unlikely considering we are having our midterm that day. The following 2 weeks, the schedule will have an unusual change. I am switching shifts  
-                with Berry. So I will be working on the following Sunday instead of next Monday.
+                  <p className='underline text-sm'>Midterm went well! Our professor kept us for an extra 20 minutes
+                     after it was over to tell us to start using AI and we found out he was grading our weekly meetings
+                     by sending the recording to Gemini... WTF. Also, last Tuesday, my professor was did not show up to
+                     class for 20 minutes. So I left. 5 minutes after I left, he sent a Canvas update saying he was coming
+                     in 10 minutes. I did not go back. Not excited to open Saturday AND Sunday this weekend. Ugh...
                 </p>
               </div>
             </div>
@@ -168,7 +187,7 @@ function App() {
         </div>
       </div>
       )}
-      {(isMobile) && ( 
+      {(/*isMobile*/ isDesktop) && ( 
         <div className="flex sm:h-screen sm:w-max items-center justify-center mt-10">
           <div className="flex flex-col justify-center bg-white max-w-full sm:max-w-[360px] w-full sm:h-[500px] h-full rounded-3xl border-1p-4">
             <button className="self-center sm:ml-32 ml-0 border-1 rounded-3xl px-3 py-1 mb-4 h-fit w-fit" onClick={() => setTimeZone(timeZone === "PST" ? "EST" : "PST")}>
@@ -179,27 +198,34 @@ function App() {
             </h1>
             <div className="flex flex-col justify-center items-center mt-4 mx-4">
               <div className="grid grid-cols-1 sm:grid-cols-7 gap-4 sm:gap-6 w-full">
-                <div className="border-1 p-3 rounded-3xl">
+                <div className="border-1 p-3 h-40 rounded-3xl">
                   <h1 className="text-center text-xl">SUNDAY</h1>
-                  <p className='text-sm pt-18'>{dates[0]}</p>
+                  <div className="flex-grow h-23"></div>  
+                  <p className='text-sm'>{dates[0]}</p>
                 </div>
-                <div className="border-1 p-3 rounded-3xl">
+                <div className="border-1 p-3 h-40 rounded-3xl">
                   <h1 className='text-center text-xl'>MONDAY</h1>
                   <ul className='list-disc pl-6'>
-                    <li className="flex items-center gap-2">
+                    {/*<li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-red-400 rounded-full"></span>
                       Work
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "10AM-6PM" : "1PM-9PM"}</p>
+                   */}
                     <li className="flex items-center gap-2">
-                    <span className="w-3 h-3 border-1 border-black bg-green-700 rounded-full"></span>
-                    Eshaan Returns!
-                  </li>
-                  <p className='text-sm'>{timeZone === "PST" ? "5PM" : "8PM"}</p>
+                      <span className="w-3 h-3 border-1 border-black bg-green-700 rounded-full"></span>
+                      Hanging Out
+                    </li>
+                    <p className='text-sm'>{timeZone === "PST" ? "1PM" : "4PM"}</p>
+                    <li className="flex items-center gap-2">
+                      <span className="w-3 h-3 border-1 border-black bg-violet-200 rounded-full"></span>
+                      j-hope Concert
+                    </li>
+                    <p className='text-sm'>{timeZone === "PST" ? "8PM" : "11PM"}</p>
                   </ul>
                   <p className='text-sm pt-1'>{dates[1]}</p>
                 </div>
-                <div className="border-1 p-3 rounded-3xl">
+                <div className="border-1 p-3 h-40 rounded-3xl">
                   <h1 className='text-center text-xl'>TUESDAY</h1>
                   <ul className='list-disc pl-6'>
                   <li className="flex items-center gap-2">
@@ -213,9 +239,9 @@ function App() {
                   </li>
                   <p className='text-sm'>{timeZone === "PST" ? "6PM-10PM" : "9PM-1AM"}</p>
                 </ul>
-                <p className='text-sm pt-2'>{dates[2]}</p>
+                <p className='text-sm'>{dates[2]}</p>
                 </div>
-                <div className="border-1 p-3 rounded-3xl">
+                <div className="border-1 p-3 h-40 rounded-3xl">
                   <h1 className='text-center text-xl'>WEDNESDAY</h1>
                   <ul className='list-disc pl-6'>
                     <li className="flex items-center gap-2">
@@ -223,15 +249,11 @@ function App() {
                       Work
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "11AM-7PM" : "2PM-10PM"}</p>
-                    <li className="flex items-center gap-2">
-                      <span className="w-3 h-3 border-1 border-black bg-violet-200 rounded-full"></span>
-                      Ticket Presale
-                    </li>
-                    <p className='text-sm'>{timeZone === "PST" ? "11AM" : "2PM"}</p>
                   </ul>
+                  <div className="flex-grow h-9"></div>  
                   <p className='text-sm pt-2'>{dates[3]}</p>
                 </div>
-                <div className="border-1 p-3 rounded-3xl">
+                <div className="border-1 p-3 h-40 rounded-3xl">
                   <h1 className='text-center text-xl'>THURSDAY</h1>
                   <ul className='list-disc pl-6'>
                     <li className="flex items-center gap-2">
@@ -240,9 +262,10 @@ function App() {
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "4:30PM-5:30PM" : "7:30PM-8:30PM"}</p>
                   </ul>
-                  <p className='text-sm pt-10'>{dates[4]}</p>
+                  <div className="flex-grow h-11"></div>  
+                  <p className='text-sm'>{dates[4]}</p>
                 </div>
-                <div className="border-1 p-3 rounded-3xl">
+                <div className="border-1 p-3 h-40 rounded-3xl">
                   <h1 className='text-center text-xl'>FRIDAY</h1>
                   <ul className='list-disc pl-6'>
                     <li className="flex items-center gap-2">
@@ -254,11 +277,11 @@ function App() {
                     <span className="w-3 h-3 border-1 border-black bg-teal-600 rounded-full"></span>
                     Meeting *
                   </li>
-                  <p className='text-sm'>Canceled (maybe){/*timeZone === "PST" ? "9:30AM-10AM" : "12:30PM-1PM"*/}</p>
+                  <p className='text-sm'>{timeZone === "PST" ? "9:30AM-10AM" : "12:30PM-1PM"}</p>
                   </ul>
-                  <p className='text-sm pt-1'>{dates[5]}</p>
+                  <p className='text-sm'>{dates[5]}</p>
                 </div>
-                <div className="border-1 p-3 rounded-3xl">
+                <div className="border-1 p-3 h-40 rounded-3xl">
                   <h1 className='text-center text-xl'>SATURDAY</h1>
                   <ul className='list-disc pl-6'>
                     <li className="flex items-center gap-2">
@@ -267,19 +290,22 @@ function App() {
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "8AM-4PM" : "11AM-7PM"}</p>
                   </ul>
-                  <p className='text-sm pt-10'>{dates[6]}</p>
+                  <div className="flex-grow h-11"></div>  
+                  <p className='text-sm'>{dates[6]}</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-1 rounded-3xl p-3 mt-6">
-              <div className="border-1 p-3 rounded-3xl">
+              <div className="border-1 p-3 h-90 rounded-3xl">
                   <h1 className="text-xl">Notes</h1>
-                  <p className="underline text-sm">Eshaan's returning from India!!! Also, Eshaan and I are seeing BTS j-Hope on March 31st! I'm so excited! I will update Friday's
-                meeting if we are still having it. But it seems unlikely considering we are having our midterm that day. The following 2 weeks, the schedule will have an unusual change. I am switching shifts  
-                with Berry. So I will be working on the following Sunday instead of next Monday.
+                  <p className="underline text-sm">Midterm went well! Our professor kept us for an extra 20 minutes
+                     after it was over to tell us to start using AI and we found out he was grading our weekly meetings
+                     by sending the recording to Gemini... WTF. Also, last Tuesday, my professor was did not show up to
+                     class for 20 minutes. So I left. 5 minutes after I left, he sent a Canvas update saying he was coming
+                     in 10 minutes. I did not go back. Not excited to open Saturday AND Sunday this weekend. Ugh...
                   </p>
                 </div>
-                <div className="border-1 p-3 rounded-3xl">
+                <div className="border-1 p-3 h-90 rounded-3xl">
                   <h1 className="text-xl">Color Clarifications</h1>
                   <ul className="list-disc pl-1">
                     <li className="flex items-center gap-2">
@@ -291,7 +317,7 @@ function App() {
                       Senior Team Project
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-3 h-3 border-1 border-black bg-cyan-700 rounded-full"></span>
+                      <span className="min-w-3 min-h-3 border-1 border-black bg-cyan-700 rounded-full"></span>
                       Meeting with Sponsors & Project Partners
                     </li>
                     <li className="flex items-center gap-2">
@@ -302,9 +328,13 @@ function App() {
                       <span className="min-w-3 min-h-3 border-1 border-black bg-violet-200 rounded-full"></span>
                       Fun Life Events
                     </li>
+                    <li className="flex items-center gap-2">
+                      <span className="min-w-3 min-h-3 border-1 border-black bg-green-700 rounded-full"></span>
+                      Eshaan Related
+                    </li>
                   </ul>
                 </div>
-                <div className="border-1 p-3 rounded-3xl">
+                <div className="border-1 p-3 h-90 rounded-3xl">
                   <h1 className="text-xl">Help</h1>
                   <p className="underline text-sm">
                     If there is an asterisk, please text me to figure out if I am available. Click the PST button
