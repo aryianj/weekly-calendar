@@ -83,7 +83,7 @@ function App() {
                       <span className="w-3 h-3 border-1 border-black bg-red-400 rounded-full"></span>
                       Work
                     </li>
-                    <p className='text-sm'>{timeZone === "PST" ? "11AM-7PM" : "2PM-10PM"}</p>
+                    <p className='text-sm'>{timeZone === "PST" ? "11AM-4:30PM" : "2PM-7:30PM"}</p>
                   </ul>
                   <p className='text-sm'>{dates[3]}</p>
                 </div>
