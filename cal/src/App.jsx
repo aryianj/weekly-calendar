@@ -38,7 +38,7 @@ function App() {
                       <span className="w-3 h-3 border-1 border-black bg-green-700 rounded-full"></span>
                       Hanging Out
                     </li>
-                    <p className='text-sm'>{timeZone === "PST" ? "5PM-10PM" : "8PM-1AM"}</p>
+                    <p className='text-sm'>{timeZone === "PST" ? "12PM-10PM" : "3PM-1AM"}</p>
                   </ul> 
                   <div className="flex-grow sm:h-23"></div> 
                   <p className='text-sm'>{dates[0]}</p>
@@ -70,7 +70,7 @@ function App() {
                       <span className="w-3 h-3 border-1 border-black bg-sky-200 rounded-full"></span>
                       Class *
                     </li>
-                    <p className='text-sm'>{/*timeZone === "PST" ? "6PM-10PM" : "9PM-1AM"*/}Cancelled</p>
+                    <p className='text-sm'>{timeZone === "PST" ? "6PM-10PM" : "9PM-1AM"}</p>
                   </ul>
                   <p className='text-sm'>{dates[2]}</p>
                 </div>
@@ -92,11 +92,6 @@ function App() {
                 <h1 className='text-center text-xl'>THURSDAY</h1>
                 <div className="flex flex-col sm:h-40 h-30 justify-between">
                   <ul className='list-disc pl-1'>
-                  <li className="flex items-center gap-2">
-                      <span className="min-w-3 min-h-3 border-1 border-black  bg-violet-200 rounded-full"></span>
-                      Interview
-                    </li>
-                    <p className='text-sm'>{timeZone === "PST" ? "3:20PM-3:40PM" : "6:20PM-6:40PM"}</p>
                     <li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-cyan-700 rounded-full"></span>
                       Meetings *
@@ -177,11 +172,10 @@ function App() {
               </div>
               <div className="border-1 p-3 sm:h-auto h-90 rounded-3xl">
                 <h1 className='text-xl'>Notes</h1>
-                  <p className='underline text-sm'>The secret was an interview... I did not get a call back so
-                    that was disappointing. Would have been a cool position in a new city but clearly it isn't
-                    my time to leave SF yet. Sorry for the late updates. End of the semester blues is getting to 
-                    me since everyones graduating but I still have one more semester left. Sigh... This weeks 
-                    interview is for a school club position though! Wish me luck! Also I hate my job haha (funny weird)....
+                  <p className='underline text-sm'>So.. I hopefully have two classes I need. I'm on the waitlist for them
+                    and I'm hoping to receive priority. However, I do have a class that I may not get in. I'm stressed because 
+                    I need all <span className='bold'>three</span> courses to graduate in the Fall. Please, please, please. Anyway,
+                    I saw a girl I knew in freshman year outside today. Crazy! That's all, enjoy this week everybody!
                 </p>
               </div>
             </div>
