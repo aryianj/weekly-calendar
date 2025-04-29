@@ -38,7 +38,7 @@ function App() {
                       <span className="w-3 h-3 border-1 border-black bg-green-700 rounded-full"></span>
                       Hanging Out
                     </li>
-                    <p className='text-sm'>{timeZone === "PST" ? "12PM-10PM" : "3PM-1AM"}</p>
+                    <p className='text-sm'>{timeZone === "PST" ? "6PM-2AM" : "9PM-5AM"}</p>
                   </ul> 
                   <div className="flex-grow sm:h-23"></div> 
                   <p className='text-sm'>{dates[0]}</p>
@@ -93,6 +93,10 @@ function App() {
                 <div className="flex flex-col sm:h-40 h-30 justify-between">
                   <ul className='list-disc pl-1'>
                     <li className="flex items-center gap-2">
+                      <span className="w-3 h-3 border-1 border-black bg-violet-200 rounded-full"></span>
+                      Berry Bday
+                    </li>
+                    <li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-cyan-700 rounded-full"></span>
                       Meetings *
                     </li>
@@ -107,14 +111,14 @@ function App() {
                   <ul className='list-disc pl-1'>
                     <li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-green-100 rounded-full"></span>
-                      Class
+                      Final Class
                     </li>
-                    <p className='text-sm'>{timeZone === "PST" ? "9AM-9:30AM" : "12PM-12:30PM"}</p>
+                    <p className='text-sm'>{timeZone === "PST" ? "8AM-12:30PM" : "11AM-3:30PM"}</p>
                     <li className="flex items-center gap-2">
-                      <span className="w-3 h-3 border-1 border-black bg-teal-600 rounded-full"></span>
-                      Meeting *
+                      <span className="w-3 h-3 border-1 border-black bg-violet-200 rounded-full"></span>
+                      Berry Bday Party
                     </li>
-                    <p className='text-sm'>{timeZone === "PST" ? "9:30AM-10AM" : "12:30PM-1PM"}</p>
+                    <p className='text-sm'>{timeZone === "PST" ? "7PM-12AM" : "10PM-3AM"}</p>
                   </ul>
                 <p className='text-sm'>{dates[5]}</p>
                 </div>
@@ -161,7 +165,7 @@ function App() {
                       Meeting with Project Partners
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="min-w-3 min-h-3 border-1 border-black  bg-violet-200 rounded-full"></span>
+                      <span className="min-w-3 min-h-3 border-1 border-black bg-violet-200 rounded-full"></span>
                       Fun Life Events
                     </li>
                     <li className="flex items-center gap-2">
@@ -172,10 +176,10 @@ function App() {
               </div>
               <div className="border-1 p-3 sm:h-auto h-90 rounded-3xl">
                 <h1 className='text-xl'>Notes</h1>
-                  <p className='underline text-sm'>So.. I hopefully have two classes I need. I'm on the waitlist for them
-                    and I'm hoping to receive priority. However, I do have a class that I may not get in. I'm stressed because 
-                    I need all <span className='bold'>three</span> courses to graduate in the Fall. Please, please, please. Anyway,
-                    I saw a girl I knew in freshman year outside today. Crazy! That's all, enjoy this week everybody!
+                  <p className='underline text-sm'>I saw Sinners! It was an excellent movie and really emphasized the gaps
+                    I have in Black history especially with regards to slavery/segregation. There was never really a "free" world for Black americans, we
+                    made it ourselves. There's so much power in making our own spaces and creating our own culture in a world that thrives
+                    on our struggles and our isolation from our original culture. Overall, great movie! Go see it in IMAX!!
                 </p>
               </div>
             </div>
