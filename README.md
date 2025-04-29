@@ -14,6 +14,7 @@ bunch of calendars you don't care about to yours? I don't!) There is probably a 
 8. Create a database for the friend request options.
 9. Generate automated testing.
 10. Make it responsive for tablet sizes.
+11. Send alerts on Sunday to make any adjustments to your calendar.
 
 ## Made with...
 React, Tailwind, Vite, Vercel, Figma, and love. <3
