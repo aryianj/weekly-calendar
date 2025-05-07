@@ -20,6 +20,9 @@ function App() {
       weeksDates.push(day.getDate());
     }
     setDates(weeksDates);
+
+    //const response = await fetch(`${nodeURL}/api/ladders/department/${department}`);
+
   }, []);
 
   return (
