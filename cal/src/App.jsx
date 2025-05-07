@@ -68,7 +68,7 @@ function App() {
                     <p className='text-sm'>{timeZone === "PST" ? "4:30PM-5:30PM" : "7:30PM-8:30PM"}</p>
                     <li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-sky-200 rounded-full"></span>
-                      Class *
+                      Last Class *
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "6PM-10PM" : "9PM-1AM"}</p>
                   </ul>
@@ -93,10 +93,6 @@ function App() {
                 <div className="flex flex-col sm:h-40 h-30 justify-between">
                   <ul className='list-disc pl-1'>
                     <li className="flex items-center gap-2">
-                      <span className="w-3 h-3 border-1 border-black bg-violet-200 rounded-full"></span>
-                      Berry Bday
-                    </li>
-                    <li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-cyan-700 rounded-full"></span>
                       Meetings *
                     </li>
@@ -111,14 +107,14 @@ function App() {
                   <ul className='list-disc pl-1'>
                     <li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-green-100 rounded-full"></span>
-                      Final Class
+                      Showcase
                     </li>
-                    <p className='text-sm'>{timeZone === "PST" ? "8AM-12:30PM" : "11AM-3:30PM"}</p>
+                    <p className='text-sm'>{timeZone === "PST" ? "12PM-3PM" : "3PM-6PM"}</p>
                     <li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-violet-200 rounded-full"></span>
-                      Berry Bday Party
+                      Dinner*
                     </li>
-                    <p className='text-sm'>{timeZone === "PST" ? "7PM-12AM" : "10PM-3AM"}</p>
+                    <p className='text-sm'>{timeZone === "PST" ? "3PM-5PM" : "6PM-8AM"}</p>
                   </ul>
                 <p className='text-sm'>{dates[5]}</p>
                 </div>
@@ -176,10 +172,12 @@ function App() {
               </div>
               <div className="border-1 p-3 sm:h-auto h-90 rounded-3xl">
                 <h1 className='text-xl'>Notes</h1>
-                  <p className='underline text-sm'>I saw Sinners! It was an excellent movie and really emphasized the gaps
-                    I have in Black history especially with regards to slavery/segregation. There was never really a "free" world for Black americans, we
-                    made it ourselves. There's so much power in making our own spaces and creating our own culture in a world that thrives
-                    on our struggles and our isolation from our original culture. Overall, great movie! Go see it in IMAX!!
+                  <p className='underline text-sm'>It's the last week of classes! Woohoo! Hopefully,
+                    next semester will be my last ever semester as an undergraduate. Let's hope that I 
+                    get into all of my courses, pass the classes, and finally walk across the stage!!! 
+                    Also, Logan and I met with potential future roommates so let's hope they actually move
+                    in with us because there is no one else responding to his post LOL. Sorry for the late updates.
+                    Have a good week everyone!
                 </p>
               </div>
             </div>
