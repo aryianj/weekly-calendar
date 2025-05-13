@@ -9,8 +9,7 @@ bunch of calendars you don't care about to yours? I don't!) There is probably a 
 3. Expand it to be a monthly/daily/weekly calendar.
 4. Expand it to have more colorway options.
 5. Make the time dynamic instead of hard-coding it.
-   
-~~6. Move the help/color clarifications to a separate pop-up screen to create more space for the notes.~~
+6. ~~Move the help/color clarifications to a separate pop-up screen to create more space for the notes.~~
 7. Add a feature so friends can request a hangout.
 8. Create a database for the friend request options.
 9. Generate automated testing.
