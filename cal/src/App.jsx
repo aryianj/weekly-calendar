@@ -5,6 +5,7 @@ function App() {
   const [timeZone, setTimeZone] = useState("PST");
   const [dates, setDates] = useState([]);
   const [month, setMonth] = useState('');
+  let nodeURL = import.meta.env.NODE_URI;
 
   useEffect(() => {
     const today = new Date();
@@ -21,8 +22,12 @@ function App() {
     }
     setDates(weeksDates);
 
-    //const response = await fetch(`${nodeURL}/api/ladders/department/${department}`);
+    async function trying() {
+      const response = await fetch(`${nodeURL}/api/events/`);
+      console.log(await response.json());
 
+    }
+    trying();
   }, []);
 
   return (
@@ -36,14 +41,15 @@ function App() {
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>SUNDAY</h1>
                 <div className="flex flex-col sm:h-40 h-30 justify-between">
-                  <ul className='list-disc pl-1'>
+                  <p></p>
+                  {/*<ul className='list-disc pl-1'>
                     <li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-green-700 rounded-full"></span>
                       Hanging Out
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "6PM-2AM" : "9PM-5AM"}</p>
                   </ul> 
-                  <div className="flex-grow sm:h-23"></div> 
+                  <div className="flex-grow sm:h-23"></div> */}
                   <p className='text-sm'>{dates[0]}</p>
                 </div>
               </div>
@@ -65,15 +71,15 @@ function App() {
                 <div className="flex flex-col sm:h-40 h-30 justify-between">
                   <ul className='list-disc pl-1'>
                     <li className="flex items-center gap-2">
-                      <span className="w-3 h-3 border-1 border-black bg-cyan-700 rounded-full"></span>
-                      Meetings *
+                      <span className="w-3 h-3 border-1 border-black bg-green-700 rounded-full"></span>
+                      Japantown
                     </li>
-                    <p className='text-sm'>{timeZone === "PST" ? "4:30PM-5:30PM" : "7:30PM-8:30PM"}</p>
+                    <p className='text-sm'>{timeZone === "PST" ? "1:30PM-3:00PM" : "4:30PM-6PM"}</p>
                     <li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-sky-200 rounded-full"></span>
-                      Last Class *
+                      Thunderbolts
                     </li>
-                    <p className='text-sm'>{timeZone === "PST" ? "6PM-10PM" : "9PM-1AM"}</p>
+                    <p className='text-sm'>{timeZone === "PST" ? "3PM-5:30PM" : "6PM-8:30PM"}</p>
                   </ul>
                   <p className='text-sm'>{dates[2]}</p>
                 </div>
@@ -96,10 +102,10 @@ function App() {
                 <div className="flex flex-col sm:h-40 h-30 justify-between">
                   <ul className='list-disc pl-1'>
                     <li className="flex items-center gap-2">
-                      <span className="w-3 h-3 border-1 border-black bg-cyan-700 rounded-full"></span>
-                      Meetings *
+                      <span className="w-3 h-3 border-1 border-black bg-sky-200 rounded-full"></span>
+                      Sinners IMAX
                     </li>
-                    <p className='text-sm'>{timeZone === "PST" ? "4:30PM-5:30PM" : "7:30PM-8:30PM"}</p>
+                    <p className='text-sm'>{timeZone === "PST" ? "?-?" : "?-?"}</p>
                   </ul>
                   <p className='text-sm'>{dates[4]}</p>
                 </div>
@@ -107,7 +113,8 @@ function App() {
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>FRIDAY</h1>
                 <div className="flex flex-col sm:h-40 h-30 justify-between">
-                  <ul className='list-disc pl-1'>
+                  <p></p>
+                  {/*<ul className='list-disc pl-1'>
                     <li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-green-100 rounded-full"></span>
                       Showcase
@@ -118,7 +125,7 @@ function App() {
                       Dinner*
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "3PM-5PM" : "6PM-8AM"}</p>
-                  </ul>
+                  </ul>*/}
                 <p className='text-sm'>{dates[5]}</p>
                 </div>
               </div>
@@ -147,7 +154,7 @@ function App() {
               <div className="border-1 p-3 sm:h-auto h-90 rounded-3xl">
                 <h1 className='text-xl'>Color Clarifications</h1>
                   <ul className='list-disc pl-1'>
-                    <li className="flex items-center gap-2">
+                    {/*<li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-sky-200 rounded-full"></span>
                       Intro to Film Studies
                     </li>
@@ -162,7 +169,7 @@ function App() {
                     <li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-teal-600 rounded-full"></span>
                       Meeting with Project Partners
-                    </li>
+                    </li>*/}
                     <li className="flex items-center gap-2">
                       <span className="min-w-3 min-h-3 border-1 border-black bg-violet-200 rounded-full"></span>
                       Fun Life Events
@@ -171,16 +178,17 @@ function App() {
                       <span className="min-w-3 min-h-3 border-1 border-black bg-green-700 rounded-full"></span>
                       Eshaan Related
                     </li>
+                    <li className="flex items-center gap-2">
+                      <span className="min-w-3 min-h-3 border-1 border-black bg-red-400 rounded-full"></span>
+                      Work
+                    </li>
                   </ul>
               </div>
               <div className="border-1 p-3 sm:h-auto h-90 rounded-3xl">
                 <h1 className='text-xl'>Notes</h1>
-                  <p className='underline text-sm'>It's the last week of classes! Woohoo! Hopefully,
-                    next semester will be my last ever semester as an undergraduate. Let's hope that I 
-                    get into all of my courses, pass the classes, and finally walk across the stage!!! 
-                    Also, Logan and I met with potential future roommates so let's hope they actually move
-                    in with us because there is no one else responding to his post LOL. Sorry for the late updates.
-                    Have a good week everyone!
+                  <p className='underline text-sm'>I have one film essay to write before I am completely out of
+                    school for the semester. Woohoo! I'm so excited to finally be free to do whatever and be completely
+                    seperated from school for a few months!! As you can tell, my schedule is emptyyyyy. I'm so free!! Ahaha!
                 </p>
               </div>
             </div>
