@@ -78,14 +78,14 @@ function App() {
                   <ul className='list-disc pl-1'>
                     <li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-green-700 rounded-full"></span>
-                      Japantown
+                      Hanging Out
                     </li>
-                    <p className='text-sm'>{timeZone === "PST" ? "1:30PM-3:00PM" : "4:30PM-6PM"}</p>
-                    <li className="flex items-center gap-2">
+                    <p className='text-sm'>{timeZone === "PST" ? "All Day" : "All Day"}</p>
+                    {/*<li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-sky-200 rounded-full"></span>
                       Thunderbolts
                     </li>
-                    <p className='text-sm'>{timeZone === "PST" ? "3PM-5:30PM" : "6PM-8:30PM"}</p>
+                    <p className='text-sm'>{timeZone === "PST" ? "3PM-5:30PM" : "6PM-8:30PM"}</p>*/}
                   </ul>
                   <p className='text-sm'>{dates[2]}</p>
                 </div>
@@ -106,13 +106,14 @@ function App() {
               <div className="border-1 p-3 rounded-3xl">
                 <h1 className='text-center text-xl'>THURSDAY</h1>
                 <div className="flex flex-col sm:h-40 h-30 justify-between">
-                  <ul className='list-disc pl-1'>
+                <p></p>
+                  {/*<ul className='list-disc pl-1'>
                     <li className="flex items-center gap-2">
                       <span className="w-3 h-3 border-1 border-black bg-sky-200 rounded-full"></span>
                       Sinners IMAX
                     </li>
                     <p className='text-sm'>{timeZone === "PST" ? "?-?" : "?-?"}</p>
-                  </ul>
+                  </ul>*/}
                   <p className='text-sm'>{dates[4]}</p>
                 </div>
               </div>
@@ -152,9 +153,8 @@ function App() {
             <div className="grid grid-cols-1 sm:gap-2 gap-4 border-1 rounded-3xl p-3 sm:w-335 w-full mt-6">
               <div className="border-1 p-3 sm:h-auto h-90 rounded-3xl">
                 <h1 className='text-xl'>Notes</h1>
-                  <p className='underline text-sm'>I have one film essay to write before I am completely out of
-                    school for the semester. Woohoo! I'm so excited to finally be free to do whatever and be completely
-                    seperated from school for a few months!! As you can tell, my schedule is emptyyyyy. I'm so free!! Ahaha!
+                  <p className='underline text-sm'>Sorry for the latest update. Nothing going on in my life recently
+                    besides being out of school. Have a great week!
                 </p>
               </div>
             </div>
